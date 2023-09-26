@@ -1,14 +1,14 @@
 # Minecraft Log4shell CVE-2021-44228
 
 ```
-podman pull lacike3/attacks-demo:minecraft-log4shell
+podman pull docker.io/lacike3/attacks-demo:minecraft-log4shell
 ```
 
 The Docker image contains the old version of Minecraft 1.8.8 with vulnerable version of Log4j library. It also contains old version of Java 8u181. This is one of the versions allowing the remote code execution through JNDI lookups with LDAP names. You can find more details about the Log4j exploitation vectors and affected Java runtime versions in [this post by Moritz Bechler](https://mbechler.github.io/2021/12/10/PSA_Log4Shell_JNDI_Injection/).
 
 There is also the [marshalsec](https://github.com/mbechler/marshalsec) tool for redirecting the LDAP references to a Java class served by simple Python webserver.
 
-The POC Java class just execute the `whoami` command and print a simple message.
+The POC Java class just executes the `whoami` command and prints a simple message.
 
 ![Minecraft Log4shell Demonstration](./minecraft-log4shell.gif)
 
