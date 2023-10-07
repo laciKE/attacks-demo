@@ -1,5 +1,7 @@
 # Minecraft Log4shell CVE-2021-44228
 
+For more information about the vulnerability and this Docker image, see [my blog post about Log4shell in Minecraft](https://malwarelab.eu/posts/log4shell-minecraft/).
+
 ```
 podman pull docker.io/lacike3/attacks-demo:minecraft-log4shell
 ```
@@ -33,7 +35,7 @@ and then navigate to the Minecraft window with CTRL+B and Up. You can send the c
 
 For stopping the server, just type `stop`. For another commands and help, type `help`.
 
-If you wish to connect your Minecraft client to the vulnerable Minecraft server and send the above messages by the player to the chat, you can expose the Minecraft server to the localhost:
+If you wish to connect your Minecraft client to the vulnerable Minecraft server and send the above messages by the player to the chat, you can expose the Minecraft server to the host:
 
 ```
 podman run --rm -it -p 25565:25565 attacks-demo:minecraft-log4shell
